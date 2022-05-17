@@ -1192,4 +1192,4 @@ model.summary() # On affiche les statistiques importantes (AIC, BIC, R2, R2, aju
 
 
 ---
-&copy; As' & Ben'
+&copy; As' & [Ben'](https://github.com/SayneGit)
