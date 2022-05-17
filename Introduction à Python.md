@@ -1,10 +1,6 @@
 # Introduction à Python.
 
-- *Table des matières*
-
 # **Légende du cours**
-
----
 
 # Ceci est un titre majeur
 
@@ -12,20 +8,11 @@
 
 **Ceci est un point important**
 
-<aside>
 📝 Ceci est un exemple single line
 
-</aside>
-
-<aside>
 ⚠️ Ceci est une mise en garde
 
-</aside>
-
-<aside>
 💡 Ceci est un conseil
-
-</aside>
 
 [Ceci est un texte avec un lien vers un site ressource](https://www.w3schools.com/python/default.asp)
 
@@ -36,8 +23,6 @@
 ```
 
 # Introduction
-
----
 
 ## Qu’est-ce que le python ?
 
@@ -68,8 +53,6 @@ Le python est un langage de programmation très populaire créé au début des a
 
 ## Pour bien commencer
 
----
-
 La majorité des PC et des Mac auront Python de préinstallé.
 
 - La dernière version est la `3.10` (`3.11` en version bêta) mais généralement, on en est à `3.9.12` (surtout sur Mac).
@@ -79,13 +62,22 @@ La majorité des PC et des Mac auront Python de préinstallé.
 python --version
 ```
 
-Si la commande n’est pas trouvée, vous pouvez installer python sur leur site : 
+Si la commande n’est pas trouvée, vous pouvez installer python sur leur [site](https://www.python.org/).
 
-[Welcome to Python.org](https://www.python.org/)
+**Logiciels & plateformes**
+
+Il existe un large éventail de logiciels permettant de coder en Python :
+
+- [Atom](https://atom.io).
+- [PyCharm](https://www.jetbrains.com/fr-fr/pycharm/download/#section=windows).
+- [Spyder](https://www.spyder-ide.org).
+- [Visual Studio Code](https://code.visualstudio.com/#alt-downloads)
+
+Il existe aussi des plateformes permettant de travailler à plusieurs comme [Colab](https://colab.research.google.com). 
+
+On est aussi souvent amené à travailler sur des fichiers en `.ipynb`. Ceux-ci offre la possibilité de mêler du `Python` à du `Markdown` (langage qui permet de mettre en forme : titres, sous-titres, liens, etc.). On peut les manipuler facilement avec Jupyter ou Google Colab. Nous verrons tout au long de ce cours que beaucoup de ressources et projets se trouvent sur des [Notebooks](https://jupyter.org) Jupyter.
 
 ## Vos premières lignes de code
-
----
 
 ### Explications
 
@@ -125,8 +117,6 @@ Félicitations ! Vous avez écrit et exécuté votre premier programme en `Pytho
 
 ## Le terminal de commandes en Python
 
----
-
 Pour tester une *petite quantité* de code en python, il est parfois préférable et plus rapide de l’exécuter dans le terminal en python.
 
 Pour cela écrivez la commande suivante dans votre terminal de commandes :
@@ -156,11 +146,7 @@ exit() # Il s'agit d'une fonction, ne pas oublier les parenthèses
 
 # Fonctionnalités
 
----
-
-## Librairies (As)
-
----
+## Librairies
 
 ### **Objectif**
 
@@ -214,18 +200,24 @@ On peut aussi importer une fonction spécifique d’une librairie en utilisant `
 from numpy import asarray
 ```
 
-### **Les indispensables**
-
-Manipuler et traiter des [petits et moyens tableaux](https://datascientest.com/pandas-python-data-science) de données.
+On peut choisir de tout importer en utilisant `*`.
 
 ```python
-import pandas as pd
+from nilearn import *
 ```
+
+### **Les indispensables**
 
 Manipuler et traiter des [grands tableaux](https://courspython.com/apprendre-numpy.html) de données.
 
 ```python
 import numpy as np
+```
+
+Manipuler et traiter des [petits et moyens tableaux](https://datascientest.com/pandas-python-data-science) (vecteurs, matrices) de données.
+
+```python
+import pandas as pd
 ```
 
 Visualiser [graphiquement](https://openclassrooms.com/fr/courses/4452741-decouvrez-les-librairies-python-pour-la-data-science/4740942-maitrisez-les-possibilites-offertes-par-matplotlib) des données. 
@@ -246,9 +238,7 @@ import seaborn as sns
 from sklearn import metrics
 ```
 
-## Variables (As)
-
----
+## Variables
 
 Comme pour la plupart des langages, le `Python` permet de manipuler différents types de variables : 
 
@@ -278,9 +268,7 @@ print(type(dinosaure))
 >> str
 ```
 
-## Structures (As)
-
----
+## Structures
 
 ### Listes
 
@@ -330,11 +318,18 @@ MegaListe = [Liste1, Liste2, Liste3]
 
 ```python
 Element = MegaListe[2][0] #3ème liste, 1er élément (l'index commence à 0)
+
+```
+
+**Ordonner les données.**
+
+```python
+list.sort() # Ordonner les données d'une liste
 ```
 
 ### Tableaux
 
-Ils permettent de stocker, visualiser et manipuler les jeux de données facilement grâce à des `[DataFrame](http://www.python-simple.com/python-pandas/creation-dataframes.php)`.
+Ils permettent de stocker, visualiser et manipuler les jeux de données facilement grâce à des [DataFrame](http://www.python-simple.com/python-pandas/creation-dataframes.php).
 
 **Import.**
 
@@ -348,7 +343,7 @@ Par indices (lignes, colonnes).
 
 ```python
 df.iloc[0,5] # 1ère ligne, 6ème colonne
-df.iloc [0:5, 0:3] # 1ère à 6ème lignes et 
+df.iloc [0:5, 0:3] # 1ère à 6ème lignes et 1ère à 4ème lignes
 df.iloc[:, 0:3] # toutes les lignes et 1ère à 4ème colonnes
 df.loc[:, 'NomColonne'] # toutes les lignes et colonne "NomColonne"
 ```
@@ -360,19 +355,28 @@ df.head(5) # Afficher les 5 premières lignes
 df.head(10) # Afficher les 10 premières lignes
 ```
 
-**Modifier le contenu.**
+**Comprendre le contenu.**
 
-🚧🚧🚧🚧🚧🚧 AS 🚧🚧🚧🚧🚧🚧 
+```python
+df.index # Noms des lignes
+df.columns # Noms des colonnes
+df.dtype # Types de données du tableau
+df.columns.str.lower() # Passer le contenu en minuscules
+df.columns.str.upper() # Passer le contenu en majuscules
+df.size # Quantité d'informations contenues dans le tableau
+df.shape # Dimensions (Nombre de lignes et colonnes)
+```
 
-df.columns.str.lower()
+**Modifier.**
 
-équivalent factorize() sur R —>  [https://pandas.pydata.org/docs/reference/api/pandas.factorize.html](https://pandas.pydata.org/docs/reference/api/pandas.factorize.html)
+```python
+df.factorize() # Obtenir une liste des modalités de la variable (similaire SELECT DISTINCT en SQL)
+df.to_numeric() # Convertir en nombre (similaire à inttostr() en Pascal)
+df.astype(NomType) # Convertir en type de variable à préciser
+df.copy() # Permet de dupliquer un tableau
+```
 
-voir tout ça même avec panda (même si df >>>)
-
-🚧🚧🚧🚧🚧🚧 AS 🚧🚧🚧🚧🚧🚧 
-
-## Fonctions (As)
+## Fonctions
 
 ---
 
@@ -435,29 +439,9 @@ Ce qui nous donne :
 Cela permet de voir rapidement le type de données et leur répartition. Cela permet d’orienter les décisions concernant les traitements et tests à effectuer.
 
 ```python
-pyplot.plot(NomDonnées)
-pyplot.show()
+df.sort_values() # Ordonner les données d'un dataframe
+describe() # Equivalent à summary() en R : résume les données
 ```
-
-🚧🚧🚧🚧🚧🚧 AS 🚧🚧🚧🚧🚧🚧 
-
-```python
-plt.hist(X)
-```
-
-```python
-as_ordered()
-```
-
-```python
-sort_values()
-```
-
-```python
-sort()
-```
-
-🚧🚧🚧🚧🚧🚧 AS 🚧🚧🚧🚧🚧🚧 
 
 ### Créer une fonction
 
@@ -524,9 +508,39 @@ Ce qui nous affiche  :
 	 Numéro étudiant : 219574
 ```
 
-## Opérateurs (Ben)
+## Graphiques
 
 ---
+
+Cela permet de voir rapidement le type de données et leur répartition. Cela permet d’orienter les décisions concernant les traitements et [tests](https://www.notion.so/Cours-Python-Stagiaires-b6077b03b28e462997b3cab2aa3d0c85) à effectuer.
+
+**Courbe**
+
+```python
+from matplotlib import pyplot # Librairie
+
+pyplot.plot(data) # Créer une courbe
+pyplot.show() #Afficher la courbe
+```
+
+**Histogramme**
+
+```python
+import matplotlib.pyplot as plt # Librairie
+
+plt.hist(data) # Afficher un histogramme
+```
+
+**Nuage de points**
+
+```python
+import matplotlib.pyplot as plt # Librairie
+
+plt.scatter(data1, data2) # Créer le nuage
+plt.show() #Afficher le nuage
+```
+
+## Opérateurs
 
 Les opérateurs sont utilisés pour réaliser des opérations sur des variables et des valeurs.
 
@@ -621,9 +635,7 @@ Les opérateurs bitwise sont utilisés pour comparer des nombres binaires.
 | ^  | XOR | Définit chaque bit à 1 si uniquement l’un des deux bits est 1 |
 | ~ (tilde) | NOT | Inverse tout les bits |
 
-## Boucles & Conditions (Ben)
-
----
+## Boucles & Conditions
 
 ### **Conditions et instructions `If`**
 
@@ -811,7 +823,7 @@ else:
 
 ### Les Boucles `For`
 
-Une boucle `for` est utilisée pour itérer sur une séquence, qui peut être une liste, un dictionnaire, un string etc.
+Une boucle `for` est utilisée pour itérer sur une séquence, qui peut être une liste, un dictionnaire, une chaîne de carctère etc.
 
 Ce type de boucle ressemble moins aux boucles `for` d’autres langages. Elle fonctionne plus comme une méthode d’itération trouvée dans les langages de programmation orienté objet.
 
@@ -949,76 +961,235 @@ for x in [0, 1, 2]:
 	pass
 ```
 
-## Graphiques (As)
+## Statistiques
 
----
+<aside>
+💡 Si vous ne disposez pas des librairies et/ou modules utilisés, il suffit de les installer en se référant au chapitre à ce propos.
 
-## Machine Learning (Ben / As)
-
----
-
-deep L
-
-boosting
-
-RF
-
-PyTorch (what, why, how)
-
-sklearn
-
-[https://www.numerical-tours.com/python/](https://www.numerical-tours.com/python/)
-
-## Statistiques (As)
-
----
+</aside>
 
 ### Statistiques descriptives
 
-🚧🚧🚧🚧🚧🚧 AS 🚧🚧🚧🚧🚧🚧 
-
 ```python
-describe()
+import pandas as pd # Librairie
+df = pd.dataframe(data)
+df.describe() # Equivalent à summary() en R : résume les données
+
+import numpy # Librairie
+numpy.sum(data) # Somme
+numpy.mean(data) # Moyenne
+numpy.median(data) # Médiane
+numpy.var(data) # Variance
+numpy.std(data) # Ecart-Type
+numpy.percentile(data, 25) # Percentile (ici on a précisé 25, soit Q1, on peut aussi mettre 75 pour Q3 ou tout autre percentile entre 1 et 100))
+
+from scipy import stats # Librairie
+stats.mode(data) # Mode (variable avec le plus gros effectif)
 ```
 
-sum()
+### Calculs
 
-mean()
-
-median()
-
-var()
-
-std()
-
-round()
-
-exemple mean(X).round()
-
-df.describe()
-
-Etc.
-
-🚧🚧🚧🚧🚧🚧 AS 🚧🚧🚧🚧🚧🚧 
+```python
+round() # Arrondir
+r2 = metrics.r2_score(donnees_reelles, donnees_predites) # Coefficient de détermination (à quel point le modèle explique les données)
+```
 
 ### Statistiques inférentielles (tests)
 
-🚧🚧🚧🚧🚧🚧 AS 🚧🚧🚧🚧🚧🚧 
+[Récapitulatif Tests Statistiques](https://drive.google.com/file/d/1HCrS5oVhnTjMpFRnBLYlykfv_ZYR7a0n/view?usp=sharing)
 
-Cf. fiche (retaper) 
+<aside>
+💡 Si vous ne disposez pas des librairies et/ou modules utilisés, il suffit de les installer en se référant au chapitre à ce propos.
 
-[Fiche 2 - Tests.pdf](Cours%20Python%20-%20Stagiaires%20e25f1aa341f84823acfd826c91f79fd5/Fiche_2_-_Tests.pdf)
+</aside>
 
-🚧🚧🚧🚧🚧🚧 AS 🚧🚧🚧🚧🚧🚧 
+
+### Tests de normalité
+
+**Test de Shapiro-Wilk**
+
+Test de Normalité (suit une Loi Normale).
+
+```python
+from scipy.stats import shapiro # Librairie
+shapiro(data) # Fonction (où data représente le tableau de données, qu'on peut nommer dinosare ou pancakes si on veut
+```
+
+### Tests de corrélation
+
+**Test de Pearson**
+
+Test de corrélation (lien d’évolution entre des variables).
+
+```python
+from scipy. stats import pearsonr # Librairie
+pearsonr(data) # Fonction
+```
+
+**Test de Spearman**
+
+Test de corrélation (lien d’évolution entre des variables) basé sur les rangs (leur classement, leur position par rapport aux autres) et non les valeurs.
+
+```python
+from scipy. stats import spearmanr # Librairie
+spearmanr(data) # Fonction
+```
+
+**Test du Chi-Deux**
+
+Tester si des variables qualitatives sont dépendantes.
+
+```python
+from scipy.stats import chi2_contingency # Librairie
+chi2_contingency(data) # Fonction
+```
+
+### Tests paramétriques 
+
+**Test de Student**
+
+Tester si les moyennes de deux grands échantillons indépendants sont significativement différentes.
+
+```python
+from scipy.stats import ttest_ind # Librairie
+ttest_ind(data1, data2) # Fonction où data1 et data2 représentent les jeux de données à comparer, là encore, on les nommes comme on le souhaite)
+```
+
+**Test d’Analyse de la Variance (ANOVA)**
+
+Tester si les moyennes de plusieurs grands échantillons sont significativement différentes.
+
+```python
+from scipy.stats import f_oneway # Librairie
+stat, p = f_oneway(data1, data2, data3) # Fonction où data1, data2 et data3 représentent les jeux de données à comparer
+```
+
+### Tests non-paramétriques
+
+**Test Mann-Whitney**
+
+Comparer la distribution de deux petits échantillons indépendants.
+
+```python
+from scipy.stats import mannwhitneyu # Librairie
+stat, p = mannwhitneyu(data1, data2) # Fonction où data1 et data2 représentent les jeux de données à comparer
+```
+
+**Test de Wilcoxon**
+
+Comparer la distribution de deux petits échantillons indépendants en se basant sur leurs rangs.
+
+```python
+from scipy.stats import wilcoxon # Librairie
+wilcoxon(data1, data2) # Fonction où data1 et data2 représentent les jeux de données à comparer
+```
+
+# Machine Learning
+
+💡 Pour un tutoriel pas à pas, se référer à ce [Notebook](https://colab.research.google.com/drive/1il2ATJY_97tQaJGQPs4MnAdTnL3tb5Gk?usp=sharing#scrollTo=nqdXdZa8RI5J).
+
+## Deep Learning
+
+### PyTorch
+
+**Objectifs**
+
+`PyTorch` est une librairie `Python` très pratique pour le Machine Learning. Il s’avère très pratique quand on fait appel à des réseaux neuronaux profonds (*Deep Learning*).
+
+**Librairie**
+
+On doit d’abord installer la librairie sur le terminal de commande.
+
+```powershell
+pip install torch
+```
+
+On l’appelle ensuite comme on le fait pour les autres.
+
+```python
+import torch
+```
+
+**Utilisation**
+
+💡 [Tutoriel](https://ledatascientist.com/debuter-avec-pytorch/) en français.
+
+### Gradient Boosting
+
+On utilise un [module](https://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_regression.html) de la bibliothèque SciKit-Learn.
+
+```python
+from sklearn.ensemble import GradientBoostingRegressor
+```
+
+💡 Pour un tutoriel pas à pas, se référer à ce [Notebook](https://colab.research.google.com/drive/1il2ATJY_97tQaJGQPs4MnAdTnL3tb5Gk?usp=sharing#scrollTo=nqdXdZa8RI5J).
+
+On va ensuite séparer les données en 2 parties : 
+
+- Un jeu de données assez grand (au moins la moitié) pour que le modèle puisse apprendre à prédire.
+- Un plus petit jeu de données pour qu’il puisse s’entraîner.
+
+S’il ne s’entraîne pas, il sera bon sur les données sur lesquelles il a appris, mais très mauvais en généralisation, c’est ce qu’on appelle de l’**overfitting**.
+
+### Random Forest
+
+On utilise un autre [module](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) de la bibliothèque SciKit-Learn.
+
+```python
+from sklearn.ensemble import RandomForestRegressor
+```
+
+On va ensuite séparer les données en 2 parties : 
+
+- Un jeu de données assez grand (au moins la moitié) pour que le modèle puisse apprendre à prédire.
+- Un plus petit jeu de données pour qu’il puisse s’entraîner.
+
+💡 Pour un tutoriel pas à pas, se référer à ce [Notebook](https://colab.research.google.com/drive/1il2ATJY_97tQaJGQPs4MnAdTnL3tb5Gk?usp=sharing#scrollTo=nqdXdZa8RI5J).
+
+## Modèles Linéaires
+
+### Régressions simple et multiple
+
+On utilise encore un [module](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso) de la bibliothèque Scikit-Learn.
+
+```python
+from sklearn.linear_model import LinearRegression # Librairie
+
+model = LinearRegression().fit(X, y) # Créer la régression à partir de X (variable indépendante) et y (variable dépendante)
+model.score(X, y) # Score de régression (coefficient de détermination R2)
+model.coef_ # Coefficient(s) de régression (β1, β2, etc.) NB : il s'agit d'un modèle simple lorsqu'on a uniquement β1Rég
+model.intercept # Coefficient β0 (ordonnée à l'origine)
+predict(X) # Prédire grâce au modèle
+model.summary() # On affiche les statistiques importantes (AIC, BIC, R2, R2, ajusté, résidus, etc.)
+```
+
+### Régression logistique
+
+On utilise un autre [module](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) de la même bibliothèque.
+
+```python
+from sklearn.linear_model import LogisticRegression # Librairie
+
+model = LogisticRegression().fit(X, y) # Créer la régression à partir de X (variable indépendante) et y (variable dépendante)
+model.score(X, y) # Score de régression (coefficient de détermination R2)
+model.coef_ # Coefficient(s) de régression (β1, β2, etc.) NB : il s'agit d'un modèle simple lorsqu'on a uniquement β1Rég
+model.intercept # Coefficient β0 (ordonnée à l'origine)
+predict(X) # Prédire grâce au modèle
+model.summary() # On affiche les statistiques importantes (AIC, BIC, R2, R2, ajusté, résidus, etc.)
+```
 
 # Ressources
-
----
 
 [Exercices](https://drive.protonmail.com/urls/0093XY42Y4#0dEUb8Z5FZB6) (énoncés et corrigés) par [Miguel Palencia-Olivar](https://github.com/mpalenciaolivar).
 
 [Ressource](https://www.w3schools.com/python/) très complète d’aide et tutos.
 
-[Notebooks](https://www.numerical-tours.com/python/) explicatifs (Machine Learning, optimisation, ondelettes, etc.)
+[Tutoriel](https://ledatascientist.com/debuter-avec-pytorch/) sur `PyTorch` en français.
 
-[CM.pdf](Cours%20Python%20-%20Stagiaires%20e25f1aa341f84823acfd826c91f79fd5/CM.pdf)
+[Notebooks](https://www.numerical-tours.com/python/) explicatifs (Machine Learning, optimisation, ondelettes, etc.).
+
+[Notebook](https://colab.research.google.com/drive/1il2ATJY_97tQaJGQPs4MnAdTnL3tb5Gk?usp=sharing) sur le Quantile Boosting & Random Forest sur des données temporelles.
+
+
+---
+&copy; As' & Ben'
