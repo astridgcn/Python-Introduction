@@ -38,7 +38,7 @@ Le python est un langage de programmation très populaire créé au début des a
 
 - Le python peut être utilisé sur un serveur pour créer des applications web.
 - Il peut être utilisé pour connecter des bases de données, et peut être utilisé pour lire et modifier des fichiers.
-- Le python est souvent utilisé pour tenir des grands jeux de données et appliquer des fonctions mathématiques complexes.
+- Le python est souvent utilisé pour traiter des grands jeux de données et appliquer des fonctions mathématiques complexes.
 - Et enfin, il peut être utilisé pour faire du prototypage, et de la création d’application prêtes pour le déploiement.
 
 **Ce qu’il faut savoir :**
@@ -60,6 +60,8 @@ La majorité des PC et des Mac auront Python de préinstallé.
 
 ```bash
 python --version
+py --version
+python3 -- version
 ```
 
 Si la commande n’est pas trouvée, vous pouvez installer python sur leur [site](https://www.python.org/).
@@ -71,7 +73,7 @@ Il existe un large éventail de logiciels permettant de coder en Python :
 - [Atom](https://atom.io).
 - [PyCharm](https://www.jetbrains.com/fr-fr/pycharm/download/#section=windows).
 - [Spyder](https://www.spyder-ide.org).
-- [Visual Studio Code](https://code.visualstudio.com/#alt-downloads)
+- [Visual Studio Code](https://code.visualstudio.com/#alt-downloads).
 
 Il existe aussi des plateformes permettant de travailler à plusieurs comme [Colab](https://colab.research.google.com). 
 
@@ -158,6 +160,10 @@ Il suffit d’ouvrir le terminal (comme vu précédemment) et d’utiliser `pip 
 
 ```bash
 pip install NomLibrairie
+```
+Si la commande pip n’est pas reconnue, vous pouvez faire :
+```bash
+py -m ensurepip—upgrade 
 ```
 
 Si on souhaite une version particulière, on peut la stipuler avec `pip`.
@@ -268,278 +274,6 @@ print(type(dinosaure))
 >> str
 ```
 
-## Structures
-
-### Listes
-
-**Créer une liste vide.**
-
-```python
-NomListe = list()
-```
-
-**Compléter la liste.**
-
-```python
-NomListe.append(Item1, Item2) # Les items peuvent être des nombres, du texte, etc.
-# Par exemple
-NomListe.append (3, "dinosaure", 34.6)
-```
-
-**Créer et remplir une liste.**
-
-```python
-NomListe = ["dinosaure", "pancakes"] # Liste de mots
-NomListe = [1, 2, 3] # Liste de chiffres
-NomListe = [17, "pirouette", 3, "cacahouète"] # Liste mixte
-NomListe = range(10) # Liste de chiffres de 0 à 9
-NomListe = range(1, 10, 2) # Liste de chiffres de 1 à 10 en allant de 2 en 2
-```
-
-**Mesurer sa longueur.** 
-
-```python
-LongueurListe = len(NomListe)
-```
-
-**Accéder à un élément.**
-
-```python
-Element = NomListe[3] #4ème élément (l'index commence à 0)
-```
-
-**Liste de listes.**
-
-```python
-MegaListe = [Liste1, Liste2, Liste3]
-```
-
-**Accéder à un élément d’une liste de listes.**
-
-```python
-Element = MegaListe[2][0] #3ème liste, 1er élément (l'index commence à 0)
-
-```
-
-**Ordonner les données.**
-
-```python
-list.sort() # Ordonner les données d'une liste
-```
-
-### Tableaux
-
-Ils permettent de stocker, visualiser et manipuler les jeux de données facilement grâce à des [DataFrame](http://www.python-simple.com/python-pandas/creation-dataframes.php).
-
-**Import.**
-
-```python
-from pandas import DataFrame
-```
-
-**Sélectionner des colonnes / lignes particulières.**
-
-Par indices (lignes, colonnes).
-
-```python
-df.iloc[0,5] # 1ère ligne, 6ème colonne
-df.iloc [0:5, 0:3] # 1ère à 6ème lignes et 1ère à 4ème lignes
-df.iloc[:, 0:3] # toutes les lignes et 1ère à 4ème colonnes
-df.loc[:, 'NomColonne'] # toutes les lignes et colonne "NomColonne"
-```
-
-Par position.
-
-```python
-df.head(5) # Afficher les 5 premières lignes
-df.head(10) # Afficher les 10 premières lignes
-```
-
-**Comprendre le contenu.**
-
-```python
-df.index # Noms des lignes
-df.columns # Noms des colonnes
-df.dtype # Types de données du tableau
-df.columns.str.lower() # Passer le contenu en minuscules
-df.columns.str.upper() # Passer le contenu en majuscules
-df.size # Quantité d'informations contenues dans le tableau
-df.shape # Dimensions (Nombre de lignes et colonnes)
-```
-
-**Modifier.**
-
-```python
-df.factorize() # Obtenir une liste des modalités de la variable (similaire SELECT DISTINCT en SQL)
-df.to_numeric() # Convertir en nombre (similaire à inttostr() en Pascal)
-df.astype(NomType) # Convertir en type de variable à préciser
-df.copy() # Permet de dupliquer un tableau
-```
-
-## Fonctions
-
----
-
-### Fonctions utiles
-
-**Importer un fichier .csv (comptatible avec `Excel`).**
-
-```python
-from pandas import read_csv
-```
-
-On précise :
-
-- Le *fichier* souhaité (ou son *[chemin](https://www.pcastuces.com/pratique/astuces/5995.htm)* s’il se situe dans un répertoire différent).
-- S'il possède des *entêtes* (ici, aucune).
-- La colonne qui sert d'*index*, c'est-à-dire de référence, du style un numéro unique, comme les clés en BDD (ici, la première colonne, donc 0, sert d'index).
-- Le type de *séparateur* *de* *données* (par défaut : `,`).
-- Le type de *séparateur* *décimal* (par défaut : `.`, souvent `,` pour des jeux de données européens).
-
-```python
-data = read_csv('NomFichier.csv', header = 0, index_col = 0, sep= ';', dec = ',')
-```
-
-Il est donc important d’ouvrir le fichier avant pour vérifier ces informations
-
-À noter qu’on peut aussi importer un jeu de données directement depuis le web. 
-
-```python
-data = read_csv('https://UrlDuFichierFinissantPar.csv', header = 0, index_col = 0, sep = ';', dec = ',')
-```
-
-**Afficher du texte et des variables.**
-
-```python
-print (”Go les MIASHS”)
-```
-
-Ce qui nous donne :
-
-```bash
-Go les MIASHS
-```
-
-On peut aussi mélanger du texte brut avec des variables.
-
-```python
-prenom = "Stéphane"
-nom = "Chrétien"
-print ("Directeur de l'UFR :", prenom, nom)
-```
-
-Ce qui nous donne :
-
-```bash
->> Directeur de l'UFR : Stéphane Chrétien
-```
-
-**Visualiser les données.**
-
-Cela permet de voir rapidement le type de données et leur répartition. Cela permet d’orienter les décisions concernant les traitements et tests à effectuer.
-
-```python
-df.sort_values() # Ordonner les données d'un dataframe
-describe() # Equivalent à summary() en R : résume les données
-```
-
-### Créer une fonction
-
-Il existe un large éventail de **fonctions prédéfinies**, mais il arrive qu’on ait besoin de réaliser régulièrement le même **ensemble de traitements**. Pour éviter d’abuser du copier-coller, on peut alors définir ses propres fonctions.
-
-Pour ce faire, on utilise `def`, on **nomme** la fonction (utiliser un nom assez explicite, tout en évitant qu’il soit trop long si on y fait souvent appel). 
-
-Puis, on précise s’il y a des variables en **entrée** (par exemple pour afficher des données, les tranformer, etc.). Il est possible qu’il n’y ait aucun paramètre en entrée (comme pour un compteur par exemple). 
-
-On utilise les `:` pour préciser que le **bloc d’instructions** va suivre. On décrit ensuite les instructions après **indentation** (précise le début du bloc et la fin du bloc).
-
-Enfin, on peut préciser des variables de **sortie** (si on effectue des calculs par exemple). De même, il se peut qu’il n’y ait pas de paramètres de sortie.
-
-```python
-def NomFonction (paramètre_1, paramètre_2, paramètre_3):
- 
-	# Instruction 1
-	# Instruction 2
-	# Instruction 3
-
-	return sortie_1, sortie_2
-```
-
-On peut ensuite appeler cette fonction autant de fois qu’on le souhaite en spécifiant les paramètres soit directement en suivant l’ordre dans lequel ils ont été déclarés, soit dans un ordre différent en précisant les paramètres.
-
-**Exemple**
-
-```python
-def CarteEtu (nom, prenom, numetu)
-
-	print ("--- Carte étudiante ---")
-	print ("Nom :", nom)
-	print ("Prénom :", prenom)
-	print ("Numéro étudiant :", numetu)
-```
-
-On peut alors soit appeler la fonction en précisant les variables en entrée en suivant le même ordre.
-
-```python
-CarteEtu (”Chrétien”, “Stéphane”, 219574)
-```
-
-Ce qui nous affiche  :
-
-```bash
->> --- Carte étudiante ---
-	 Nom : Chrétien
-	 Prénom : Stéphane
-	 Numéro étudiant : 219574
-```
-
-Mais si on ne se souvient plus de l’ordre, ou qu’on aime se rebeller, on peut préciser à quoi correspondent nos variables en entrée.
-
-```python
-CarteEtu (numetu = 219574, prenom = “Stéphane”, nom =”Chrétien”)
-```
-
-Ce qui nous affiche  :
-
-```bash
->> --- Carte étudiante ---
-	 Nom : Chrétien
-	 Prénom : Stéphane
-	 Numéro étudiant : 219574
-```
-
-## Graphiques
-
----
-
-Cela permet de voir rapidement le type de données et leur répartition. Cela permet d’orienter les décisions concernant les traitements et [tests](https://www.notion.so/Cours-Python-Stagiaires-b6077b03b28e462997b3cab2aa3d0c85) à effectuer.
-
-**Courbe**
-
-```python
-from matplotlib import pyplot # Librairie
-
-pyplot.plot(data) # Créer une courbe
-pyplot.show() #Afficher la courbe
-```
-
-**Histogramme**
-
-```python
-import matplotlib.pyplot as plt # Librairie
-
-plt.hist(data) # Afficher un histogramme
-```
-
-**Nuage de points**
-
-```python
-import matplotlib.pyplot as plt # Librairie
-
-plt.scatter(data1, data2) # Créer le nuage
-plt.show() #Afficher le nuage
-```
-
 ## Opérateurs
 
 Les opérateurs sont utilisés pour réaliser des opérations sur des variables et des valeurs.
@@ -634,6 +368,250 @@ Les opérateurs bitwise sont utilisés pour comparer des nombres binaires.
 | | (pipe) | OR | Définit chaque bit à 1 si l’un des deux bits est 1 |
 | ^  | XOR | Définit chaque bit à 1 si uniquement l’un des deux bits est 1 |
 | ~ (tilde) | NOT | Inverse tout les bits |
+
+## Structures
+
+### Listes
+
+**Créer une liste vide.**
+
+```python
+NomListe = list()
+```
+
+**Compléter la liste.**
+
+```python
+NomListe.append(Item1) # Les items peuvent être des nombres, du texte, etc.
+# Par exemple
+NomListe.append ("dinosaure")
+NomListe.append (34.6)
+```
+
+**Créer et remplir une liste.**
+
+```python
+NomListe = ["dinosaure", "pancakes"] # Liste de mots
+NomListe = [1, 2, 3] # Liste de chiffres
+NomListe = [17, "pirouette", 3, "cacahouète"] # Liste mixte
+NomListe = list(range(20))
+NomListe = list(range(0, 10)) # Liste de chiffres de 0 à 9
+NomListe = list(range(1, 10, 2)) # Liste de chiffres de 1 à 10 en allant de 2 en 2
+```
+
+**Mesurer sa longueur.** 
+
+```python
+LongueurListe = len(NomListe)
+```
+
+**Accéder à un élément.**
+
+```python
+Element = NomListe[3] #4ème élément (l'index commence à 0)
+```
+
+**Liste de listes.**
+
+```python
+MegaListe = [Liste1, Liste2, Liste3]
+```
+
+**Accéder à un élément d’une liste de listes.**
+
+```python
+Element = MegaListe[2][0] #3ème liste, 1er élément (l'index commence à 0)
+
+```
+
+**Ordonner les données.**
+
+```python
+NomListe.sort() # Ordonner les données d'une liste
+```
+
+### Tableaux
+
+Ils permettent de stocker, visualiser et manipuler les jeux de données facilement grâce à des [DataFrame](http://www.python-simple.com/python-pandas/creation-dataframes.php).
+
+**Import.**
+
+```python
+from pandas import DataFrame as df
+import pandas as pd
+```
+
+**Sélectionner des colonnes / lignes particulières.**
+
+Par indices (lignes, colonnes).
+
+```python
+df.iloc[0,5] # 1ère ligne, 5ème colonne
+df.iloc [0:5, 0:3] # 1ère à 5ème lignes et 1ère à 3ème colonnes
+df.iloc[:, 0:3] # toutes les lignes et 1ère à 3ème colonnes
+df.loc[:, 'NomColonne'] # toutes les lignes et colonne "NomColonne"
+```
+
+Par position.
+
+```python
+df.head(5) # Afficher les 5 premières lignes
+df.head(10) # Afficher les 10 premières lignes
+```
+
+**Comprendre le contenu.**
+
+```python
+df.index # Noms des lignes
+df.columns # Noms des colonnes
+df.dtypes # Types de données du tableau
+df.columns.__str__().lower() # Passer le contenu en minuscules
+df.columns.__str__().upper() # Passer le contenu en majuscules
+df.size # Quantité d'informations contenues dans le tableau
+df.shape # Dimensions (Nombre de lignes et colonnes)
+```
+
+**Modifier.**
+
+```python
+pd.factorize() # Obtenir une liste des modalités de la variable (similaire SELECT DISTINCT en SQL)
+pd.to_numeric() # Convertir en nombre (similaire à inttostr() en Pascal)
+df.astype(NomType) # Convertir en type de variable à préciser
+df.copy() # Permet de dupliquer un tableau
+```
+
+## Fonctions
+
+---
+
+### Fonctions utiles
+
+**Importer un fichier .csv (comptatible avec `Excel`).**
+
+```python
+from pandas import read_csv
+import pandas as pd
+```
+
+On précise :
+
+- Le *fichier* souhaité (ou son *[chemin](https://www.pcastuces.com/pratique/astuces/5995.htm)* s’il se situe dans un répertoire différent).
+- S'il possède des *entêtes* (ici, aucune).
+- La colonne qui sert d'*index*, c'est-à-dire de référence, du style un numéro unique, comme les clés en BDD (ici, la première colonne, donc 0, sert d'index).
+- Le type de *séparateur* *de* *données* (par défaut : `,`).
+- Le type de *séparateur* *décimal* (par défaut : `.`, souvent `,` pour des jeux de données européens).
+
+```python
+data = pd.read_csv('NomFichier.csv', header = 0, index_col = 0, sep= ';', decimal = ',')
+```
+
+Il est donc important d’ouvrir le fichier avant pour vérifier ces informations
+
+À noter qu’on peut aussi importer un jeu de données directement depuis le web. 
+
+```python
+data = pd.read_csv('https://UrlDuFichierFinissantPar.csv', header = 0, index_col = 0, sep = ';', decimal = ',')
+```
+
+**Afficher du texte et des variables.**
+
+```python
+print (”Go les MIASHS”)
+```
+
+Ce qui nous donne :
+
+```bash
+Go les MIASHS
+```
+
+On peut aussi mélanger du texte brut avec des variables.
+
+```python
+prenom = "Stéphane"
+nom = "Chrétien"
+print ("Directeur de l'UFR :", prenom, nom)
+```
+
+Ce qui nous donne :
+
+```bash
+>> Directeur de l'UFR : Stéphane Chrétien
+```
+
+**Visualiser les données.**
+
+Cela permet de voir rapidement le type de données et leur répartition. Cela permet d’orienter les décisions concernant les traitements et tests à effectuer.
+
+```python
+df.sort_values(by=['Colonne']) # Ordonner les données d'un dataframe
+describe() # Equivalent à summary() en R : résume les données
+```
+
+### Créer une fonction
+
+Il existe un large éventail de **fonctions prédéfinies**, mais il arrive qu’on ait besoin de réaliser régulièrement le même **ensemble de traitements**. Pour éviter d’abuser du copier-coller, on peut alors définir ses propres fonctions.
+
+Pour ce faire, on utilise `def`, on **nomme** la fonction (utiliser un nom assez explicite, tout en évitant qu’il soit trop long si on y fait souvent appel). 
+
+Puis, on précise s’il y a des variables en **entrée** (par exemple pour afficher des données, les tranformer, etc.). Il est possible qu’il n’y ait aucun paramètre en entrée (comme pour un compteur par exemple). 
+
+On utilise les `:` pour préciser que le **bloc d’instructions** va suivre. On décrit ensuite les instructions après **indentation** (précise le début du bloc et la fin du bloc).
+
+Enfin, on peut préciser des variables de **sortie** (si on effectue des calculs par exemple). De même, il se peut qu’il n’y ait pas de paramètres de sortie.
+
+```python
+def NomFonction (paramètre_1, paramètre_2, paramètre_3):
+ 
+	# Instruction 1
+	# Instruction 2
+	# Instruction 3
+
+	return sortie_1, sortie_2
+```
+
+On peut ensuite appeler cette fonction autant de fois qu’on le souhaite en spécifiant les paramètres soit directement en suivant l’ordre dans lequel ils ont été déclarés, soit dans un ordre différent en précisant les paramètres.
+
+**Exemple**
+
+```python
+def CarteEtu (nom, prenom, numetu)
+
+	print ("--- Carte étudiante ---")
+	print ("Nom :", nom)
+	print ("Prénom :", prenom)
+	print ("Numéro étudiant :", numetu)
+```
+
+On peut alors soit appeler la fonction en précisant les variables en entrée en suivant le même ordre.
+
+```python
+CarteEtu (”Chrétien”, “Stéphane”, 219574)
+```
+
+Ce qui nous affiche  :
+
+```bash
+>> --- Carte étudiante ---
+	 Nom : Chrétien
+	 Prénom : Stéphane
+	 Numéro étudiant : 219574
+```
+
+Mais si on ne se souvient plus de l’ordre, ou qu’on aime se rebeller, on peut préciser à quoi correspondent nos variables en entrée.
+
+```python
+CarteEtu (numetu = 219574, prenom = “Stéphane”, nom =”Chrétien”)
+```
+
+Ce qui nous affiche  :
+
+```bash
+>> --- Carte étudiante ---
+	 Nom : Chrétien
+	 Prénom : Stéphane
+	 Numéro étudiant : 219574
+```
 
 ## Boucles & Conditions
 
@@ -823,11 +801,9 @@ else:
 
 ### Les Boucles `For`
 
-Une boucle `for` est utilisée pour itérer sur une séquence, qui peut être une liste, un dictionnaire, une chaîne de carctère etc.
+Une boucle `for` est utilisée pour itérer sur une séquence, qui peut être une liste, un dictionnaire, une chaîne de carctère, etc.
 
-Ce type de boucle ressemble moins aux boucles `for` d’autres langages. Elle fonctionne plus comme une méthode d’itération trouvée dans les langages de programmation orienté objet.
-
-Avec la boucle `for` nous pouvons éxecuter une suite d’instructions, pour chaque item dans une liste, une suite ou autre...
+Avec la boucle `for` nous pouvons éxecuter une suite d’instructions, pour chaque item dans une liste, une suite ou autre, etc.
 
 **Exemple**
 
@@ -961,6 +937,40 @@ for x in [0, 1, 2]:
 	pass
 ```
 
+## Graphiques
+
+---
+
+Cela permet de voir rapidement le type de données et leur répartition. Cela permet d’orienter les décisions concernant les traitements et [tests](https://www.notion.so/Cours-Python-Stagiaires-b6077b03b28e462997b3cab2aa3d0c85) à effectuer.
+N’oubliez pas de manipuler les paramètres (nom des axes, graduation, couleurs, etc.).
+
+**Courbe**
+
+```python
+from matplotlib import pyplot # Librairie : ici on l'a importée directement, donc on l'appelle avec pyplot
+
+pyplot.plot(data) # Créer une courbe
+pyplot.show() #Afficher la courbe
+```
+
+**Histogramme**
+
+```python
+from matplotlib import pyplot # Librairie : ici on l'a importée directement, donc on l'appelle avec pyplot
+
+plt.hist(data) # Créer un histogramme
+plt.show() # Afficher un histogramme
+```
+
+**Nuage de points**
+
+```python
+from matplotlib import pyplot # Librairie : ici on l'a importée directement, donc on l'appelle avec pyplot
+
+plt.scatter(data1, data2) # Créer le nuage
+plt.show() #Afficher le nuage
+```
+
 ## Statistiques
 
 <aside>
@@ -1084,13 +1094,13 @@ from scipy.stats import wilcoxon # Librairie
 wilcoxon(data1, data2) # Fonction où data1 et data2 représentent les jeux de données à comparer
 ```
 
-# Machine Learning
+## Machine Learning
 
 💡 Pour un tutoriel pas à pas, se référer à ce [Notebook](https://colab.research.google.com/drive/1il2ATJY_97tQaJGQPs4MnAdTnL3tb5Gk?usp=sharing#scrollTo=nqdXdZa8RI5J).
 
-## Deep Learning
+### Deep Learning
 
-### PyTorch
+#### PyTorch
 
 **Objectifs**
 
@@ -1155,13 +1165,13 @@ On utilise encore un [module](https://scikit-learn.org/stable/modules/generated/
 ```python
 from sklearn.linear_model import LinearRegression # Librairie
 
-model = LinearRegression().fit(X, y) # Créer la régression à partir de X (variable indépendante) et y (variable dépendante)
-model.score(X, y) # Score de régression (coefficient de détermination R2)
+model = LinearRegression().fit(X_train, y) # Créer la régression à partir de X (variable indépendante) et y (variable dépendante)
+model.score(X_train, y) # Score de régression (coefficient de détermination R2)
 model.coef_ # Coefficient(s) de régression (β1, β2, etc.) NB : il s'agit d'un modèle simple lorsqu'on a uniquement β1Rég
-model.intercept # Coefficient β0 (ordonnée à l'origine)
-predict(X) # Prédire grâce au modèle
-model.summary() # On affiche les statistiques importantes (AIC, BIC, R2, R2, ajusté, résidus, etc.)
+model.intercept_ # Coefficient β0 (ordonnée à l'origine)
+model.predict(X_test) # Prédire grâce au modèle
 ```
+Vous pouvez retrouver un exemple d'utilisation de cette bibliothèque [ici](https://github.com/StagiairesMIASHS/Introduction/blob/main/exo_modele_lineaire.py).
 
 ### Régression logistique
 
@@ -1171,16 +1181,16 @@ On utilise un autre [module](https://scikit-learn.org/stable/modules/generated/s
 from sklearn.linear_model import LogisticRegression # Librairie
 
 model = LogisticRegression().fit(X, y) # Créer la régression à partir de X (variable indépendante) et y (variable dépendante)
-model.score(X, y) # Score de régression (coefficient de détermination R2)
+model.score(X_train, y) # Score de régression (coefficient de détermination R2)
 model.coef_ # Coefficient(s) de régression (β1, β2, etc.) NB : il s'agit d'un modèle simple lorsqu'on a uniquement β1Rég
 model.intercept # Coefficient β0 (ordonnée à l'origine)
-predict(X) # Prédire grâce au modèle
-model.summary() # On affiche les statistiques importantes (AIC, BIC, R2, R2, ajusté, résidus, etc.)
+predict(X_test) # Prédire grâce au modèle
+model.summary() # On affiche les statistiques importantes (AIC, BIC, R2, R2 ajusté, résidus, etc.)
 ```
 
 # Ressources
 
-[Exercices](https://drive.protonmail.com/urls/0093XY42Y4#0dEUb8Z5FZB6) (énoncés et corrigés) par [Miguel Palencia-Olivar](https://github.com/mpalenciaolivar).
+[Exercices](https://github.com/mpalenciaolivar/Intro-au-Python) (énoncés et corrigés) par [Miguel Palencia-Olivar](https://github.com/mpalenciaolivar).
 
 [Ressource](https://www.w3schools.com/python/) très complète d’aide et tutos.
 
@@ -1192,4 +1202,4 @@ model.summary() # On affiche les statistiques importantes (AIC, BIC, R2, R2, aju
 
 
 ---
-&copy; As' & [Ben'](https://github.com/SayneGit)
+&copy; [As'](https://github.com/astridgcn) & [Ben'](https://github.com/SayneGit)
