@@ -1194,6 +1194,8 @@ model.summary() # On affiche les statistiques importantes (AIC, BIC, R2, R2 ajus
 
 [Ressource](https://www.w3schools.com/python/) très complète d’aide et tutos.
 
+[Playlist](https://www.youtube.com/playlist?app=desktop&list=PLO_fdPEVlfKqMDNmCFzQISI2H_nJcEDJq) sur le Machine Learning `Python` en français.
+
 [Tutoriel](https://ledatascientist.com/debuter-avec-pytorch/) sur `PyTorch` en français.
 
 [Notebooks](https://www.numerical-tours.com/python/) explicatifs (Machine Learning, optimisation, ondelettes, etc.).
