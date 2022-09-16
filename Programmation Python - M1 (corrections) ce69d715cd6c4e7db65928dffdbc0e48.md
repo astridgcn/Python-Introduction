@@ -92,11 +92,11 @@ Connectez vous à [GitHub](https://github.com) et [allez sur la page du projet a
 
 Une fois que vous êtes sur le repo qui vous intéresse, vous pouvez cliquer sur le bouton **Fork** en haut d’un repo :
 
-![Untitled](GitHub1.png)
+![fork](https://github.com/astridgcn/Python-Introduction/blob/14c99fc259a1c907620b7e90d52b2c17aed7bd73/fork.png)
 
 Une fois que vous aurez cliqué sur le bouton, une nouvelle fenêtre s’affichera : 
 
-![Untitled](GitHub2.png)
+![forking](https://github.com/astridgcn/Python-Introduction/blob/14c99fc259a1c907620b7e90d52b2c17aed7bd73/forking.png)
 
 Cette fenêtre vous propose de changer le nom et la description du repo que vous êtes en train de fork. Une fois que vous avez cliqué sur “*Create Fork*”, la page du repo sur votre compte s’affichera.
 
@@ -104,7 +104,7 @@ Une fois que vous êtes sur votre page de repo vous voudrez sûrement commencer 
 
 Cliquez sur le bouton vert `**Code**` et copiez le lien comme ci-dessous :
 
-![Untitled](GitHub3.png)
+![url](https://github.com/astridgcn/Python-Introduction/blob/14c99fc259a1c907620b7e90d52b2c17aed7bd73/url.png)
 
 Rendez-vous sur votre terminal préféré et exécutez la commande suivante :
 
@@ -1374,10 +1374,7 @@ model.summary() # On affiche les statistiques importantes (AIC, BIC, R2, R2 ajus
 
 Dans cet exercice, on écrira une fonction qui, pour chaque nombre compris entre 1 et 10, lui appliquera un exposant qu’on lui spécifiera en entrée.
 
-<aside>
 💡 *Exemple : On choisit le chiffre `3` exposant `2`, on obtient `9`*
-
-</aside>
 
 ---
 
@@ -1385,10 +1382,7 @@ Dans cet exercice, on écrira une fonction qui, pour chaque nombre compris entre
 
 On écrira une procédure dont l’exécution ne se stoppera pas avant que l’utilisateurice rentre la chaîne de caractère suivante : `"stop"`.
 
-<aside>
 💡 *La fonction à utiliser pour que l’utilisateurice rentre des données est `input()`.*
-
-</aside>
 
 ---
 
@@ -1398,10 +1392,7 @@ On créera une fonction qui, à chaque chaîne de caractères, retirera les lett
 
 *Exemple : Le mot “dinosaure” deviendra “dnsr” si on décide d’enlever les voyelles.*
 
-<aside>
 💡 *NB : Les voyelles ne sont qu’un exemple de lettres à enlever. La liste peut être n’importe quelle suite de lettres.*
-
-</aside>
 
 ---
 
@@ -1409,10 +1400,7 @@ On créera une fonction qui, à chaque chaîne de caractères, retirera les lett
 
 On écrira une fonction qui retourne tous les multiples d’un nombre dans un intervalle fourni en entrée.
 
-<aside>
 💡 *Exemple : On récupèrera les multiples de 2 compris entre 3 et 20 inclus.*
-
-</aside>
 
 ---
 
@@ -1424,10 +1412,7 @@ Dans cet exercice, le but est le même. *(Sauf que vous gagnez pas de cuisine si
 
 On créera une procédure dans laquelle un chiffre est sélectionné au hasard entre 0 et 9. L’utilisateurice doit deviner lequel c’est.
 
-<aside>
 💡 *Si le chiffre entré est supérieur à celui à trouver, la fonction doit afficher moins, et inversement si le chiffre est inférieur.*
-
-</aside>
 
 La fonction à utiliser pour sélectionner un chiffre aléatoire est :
 
@@ -1518,10 +1503,7 @@ taille = [75, 85, 96, 100, 104, 110, 117, 120, 125, 130, 133, 140, 145, 150, 157
 
 On étudiera les liens entre taille et âge : on créera un modèle prédictif de la taille grâce à l’âge, on l’entraînera sur 80% du jeu de données, affichera les coefficients du modèle, et testera ses performances sur les 20% du jeux de données restant.
 
-<aside>
 💡 *Un exemple possible de [code](https://github.com/astridgcn/Linear-Regression-Machine-Learning/blob/08dbea469f25a62eeca42890bf2fd08ccb6c565e/linear-regression-ml.py)*.
-
-</aside>
 
 ---
 
@@ -1535,10 +1517,7 @@ Sachant que pour $*n*$ villes, on a $\frac {(n - 1)!}{2}$ chemins à étudier, i
 
 Pour résoudre ce problème d’optimisation, on fait appel à un algorithme génétique. L’algorithme génétique se base sur la théorie évolutionniste. Étant donné qu’on ne peut tester toutes les solutions possibles, on en teste quelques unes, identifie les meilleures (principe d’adaptation), les conserve pour en générer (principe d’hérédité) de nouvelles jusqu’à atteindre l’objectif.
 
-<aside>
 💡 *Un peu comme si les dinosaures avaient eu besoin d’être géants pour survivre. Au début, on observe toutes les tailles de dinosaures, puis au fur et à mesure, seulement les plus grands survivent, et se reproduisent jusqu’à ce que la population ne soit constituée que de dinosaures gigantesques.*
-
-</aside>
 
 On créera un premier individu qui parcourt les salles d’escalade dans l’ordre :
 
@@ -1552,10 +1531,7 @@ Ensuite, on générera à nouveau 90 trajets aléatoires à partir des 10 meille
 
 On répète autant de fois qu’il sera nécessaire pour atteindre la distance nécessaire.
 
-<aside>
 💡 *On pourra par exemple générer aléatoirement la distance entre les 15 salles d’escalade, avec un minimum de 100km entre chaque et 3450 comme distance à parcourir. On pourrait aussi télécharger et importer un fichier `.csv` des distances des 15 plus grandes villes de France.*
-
-</aside>
 
 Si besoin, un bout de code pour générer la matrice des salles d’escalade :
 
@@ -1578,12 +1554,9 @@ for i in range (N) :
 
 Ce qui nous donne :
 
-![Untitled](Exo10.png)
+![Matrice](https://github.com/astridgcn/Python-Introduction/blob/14c99fc259a1c907620b7e90d52b2c17aed7bd73/Exo10.png)
 
-<aside>
 💡 *Un exemple possible de [code](https://github.com/astridgcn/Genetic-Algorithm-Traveling-Salesman-Problem/blob/88db6399a5e59a8493204647393956d54cc36b54/Traveling%20Salesman%20Problem.py)*.
-
-</aside>
 
 ## Corrections :
 
