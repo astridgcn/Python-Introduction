@@ -1,7 +1,5 @@
 # Programmation Python - M1 (corrections)
 
-- *Table des matières*
-
 # **Légende du cours**
 
 ---
