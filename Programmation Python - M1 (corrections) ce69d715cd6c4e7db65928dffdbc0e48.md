@@ -101,11 +101,11 @@ Connectez vous à [GitHub](https://github.com) et [allez sur la page du projet a
 
 Une fois que vous êtes sur le repo qui vous intéresse, vous pouvez cliquer sur le bouton **Fork** en haut d’un repo :
 
-![Untitled](Programmation%20Python%20-%20M1%20(corrections)%20ce69d715cd6c4e7db65928dffdbc0e48/Untitled.png)
+![Untitled](Programmation%20Python%20-%20M1%20(corrections)%20ce69d715cd6c4e7db65928dffdbc0e48/GitHub1.png)
 
 Une fois que vous aurez cliqué sur le bouton, une nouvelle fenêtre s’affichera : 
 
-![Untitled](Programmation%20Python%20-%20M1%20(corrections)%20ce69d715cd6c4e7db65928dffdbc0e48/Untitled%201.png)
+![Untitled](Programmation%20Python%20-%20M1%20(corrections)%20ce69d715cd6c4e7db65928dffdbc0e48/GitHub2.png)
 
 Cette fenêtre vous propose de changer le nom et la description du repo que vous êtes en train de fork. Une fois que vous avez cliqué sur “*Create Fork*”, la page du repo sur votre compte s’affichera.
 
@@ -113,7 +113,7 @@ Une fois que vous êtes sur votre page de repo vous voudrez sûrement commencer 
 
 Cliquez sur le bouton vert `**Code**` et copiez le lien comme ci-dessous :
 
-![Untitled](Programmation%20Python%20-%20M1%20(corrections)%20ce69d715cd6c4e7db65928dffdbc0e48/Untitled%202.png)
+![Untitled](Programmation%20Python%20-%20M1%20(corrections)%20ce69d715cd6c4e7db65928dffdbc0e48/GitHub3.png)
 
 Rendez-vous sur votre terminal préféré et exécutez la commande suivante :
 
@@ -1587,7 +1587,7 @@ for i in range (N) :
 
 Ce qui nous donne :
 
-![Untitled](Programmation%20Python%20-%20M1%20(corrections)%20ce69d715cd6c4e7db65928dffdbc0e48/Untitled%203.png)
+![Untitled](Programmation%20Python%20-%20M1%20(corrections)%20ce69d715cd6c4e7db65928dffdbc0e48/Exo10.png)
 
 <aside>
 💡 *Un exemple possible de [code](https://github.com/astridgcn/Genetic-Algorithm-Traveling-Salesman-Problem/blob/88db6399a5e59a8493204647393956d54cc36b54/Traveling%20Salesman%20Problem.py)*.
