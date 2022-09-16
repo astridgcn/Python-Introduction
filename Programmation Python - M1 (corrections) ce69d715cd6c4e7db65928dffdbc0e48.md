@@ -12,20 +12,11 @@
 
 **Ceci est un point important**
 
-<aside>
 📝 Ceci est un exemple single line
 
-</aside>
-
-<aside>
 ⚠️ Ceci est une mise en garde
 
-</aside>
-
-<aside>
 💡 Ceci est un conseil
-
-</aside>
 
 [Ceci est un texte avec un lien vers un site ressource](https://www.w3schools.com/python/default.asp)
 
