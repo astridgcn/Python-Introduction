@@ -43,7 +43,7 @@ Le python est un langage de programmation très populaire créé au début des a
 
 **Ce qu’il faut savoir :**
 
-- La version majeure la plus récente de python est `Python 3` (py3) , celui qu’on va utiliser pendant ce cours d’introduction. Même si `Python 3` (py2) est très populaire mais plus maintenu.
+- La version majeure la plus récente de python est `Python 3` (py3) , celui qu’on va utiliser pendant ce cours d’introduction. Même si `Python 2` (py2) est très populaire mais plus maintenu.
 
 **La syntaxe du python par rapport à d’autres langages de programmation**
 
